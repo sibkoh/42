@@ -1,0 +1,40 @@
+SRCS		= 	ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strnstr.c \
+
+OBJS		= ${SRCS:.c=.o}
+TARGET		= libft.a
+INCLUDES	= includes
+CC			= gcc
+CFLAGS		= -Wall -Wextra -Werror
+RM			= rm -f
+
+all: ${TARGET}
+
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
+
+${TARGET}: ${OBJS}
+	ar -rc ${TARGET} ${OBJS}
+
+clean:
+	${RM} ${OBJS}
+
+fclean:
+	${RM} ${TARGET}
+
+re: fclean all
+
+.PHONY: all clean fclean re
