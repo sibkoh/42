@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 10:50:59 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/04/20 14:52:57 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/04/25 10:28:30 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
-char	*strnstr(const char *str, const char *substr);
+char	*ft_strchr(const char *s, int c);
+int	ft_strncmp(const char *lhs, const char *rhs, size_t count);
+void	*ft_memchr(const void *s, int c, size_t count);
+char	*ft_strrchr(const char *s, int c);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strnstr(const char *str, const char *substr, size_t n);
+int	ft_atoi(const char *str);
 
 #endif
