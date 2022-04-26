@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 14:30:48 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/04/26 11:33:51 by amunoz-d         ###   ########.fr       */
+/*   Created: 2022/04/26 09:35:23 by amunoz-d          #+#    #+#             */
+/*   Updated: 2022/04/26 11:01:51 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t count)
+void	*ft_calloc(size_t num, size_t size)
 {
-	unsigned char			*s1;
-	unsigned char			*s2;
+	void	*pnum;
 
-	s1 = (unsigned char *)dest;
-	s2 = (unsigned char *)src;
-	if ((dest == NULL) && (src == NULL))
+	pnum = malloc(num * size);
+	if (!pnum)
 		return (NULL);
-	while (count-- > 0)
-	{
-		*s1 = *s2;
-		s1++;
-		s2++;
-	}
-	return ((void *)dest);
+	ft_bzero(pnum, (num * size));
+	return (pnum);
 }

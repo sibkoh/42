@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:30:48 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/04/21 10:38:55 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/04/26 12:00:52 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	tmpsrc = (unsigned char *)src;
 	tmpdest = (unsigned char *)dest;
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	if (dest > src)
 	{
 		while (len-- > 0)

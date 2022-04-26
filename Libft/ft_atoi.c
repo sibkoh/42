@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:47:19 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/04/25 14:05:39 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/04/26 12:28:23 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 int	ft_atoi(const char *str)
 {
-	int	sig;
-	int	num;
-	int	i;
+	long	sig;
+	long	num;
+	int		i;
 
 	sig = 1;
 	num = 0;
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\f'
-		str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
+		|| str[i] == '\r' || str[i] == '\n' || str[i] == '\v')
 		i++;
 	if ((str[i] == '-') || (str[i] == '+'))
 	{
 		if (str[i] == '-')
-			sig *= -1;
+			sig = -1;
 		i++;
 	}
 	while ((str[i]) && ((str[i] >= '0') && (str[i] <= '9')))
