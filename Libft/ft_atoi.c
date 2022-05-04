@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 12:47:19 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/04/26 12:28:23 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:13:58 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	long	sig;
-	long	num;
-	int		i;
+	int			sig;
+	int			num;
+	int			i;
 
 	sig = 1;
 	num = 0;
@@ -35,5 +35,7 @@ int	ft_atoi(const char *str)
 		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
+	if (num > 2147483647)
+		return ((-1 * 2147483647) + 1);
 	return (sig * num);
 }
