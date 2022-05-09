@@ -26,27 +26,33 @@ SRCS		= 	ft_isalpha.c \
 				ft_strtrim.c \
 				ft_split.c \
 				ft_itoa.c \
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_putstr_fd.c \
+				ft_putchar_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
 
-OBJS		= ${SRCS:.c=.o}
-TARGET		= libft.a
+OBJS		= $(SRCS:.c=.o)
+NAME		= libft.a
 INCLUDES	= includes
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 
-all: ${TARGET}
+all: $(NAME)
 
 %.o: %.c
-	${CC} ${CFLAGS} -c $< -o $@ -I ${INCLUDES}
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
 
-${TARGET}: ${OBJS}
-	ar -rc ${TARGET} ${OBJS}
+$(NAME): $(OBJS)
+	ar -rc $(NAME) $(OBJS)
 
 clean:
-	${RM} ${OBJS}
+	$(RM) $(OBJS)
 
 fclean:
-	${RM} ${TARGET}
+	$(RM) $(NAME)
 
 re: fclean all
 
