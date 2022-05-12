@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:31:48 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/05/10 11:39:59 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:09:51 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	temp = *lst;
-	if (!lst || !del)
+	if (!*lst || !del)
 		return ;
+	temp = *lst;
 	while (*lst)
 	{
 		temp = (*lst)->next;

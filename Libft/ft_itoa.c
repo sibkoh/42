@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 09:30:52 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/05/04 13:14:12 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:24:02 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_countdig(long n)
 {
 	int		i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	while (n)
 	{

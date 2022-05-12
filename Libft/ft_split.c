@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 10:40:15 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/05/09 09:59:35 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/05/12 13:42:27 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,27 @@ int	countword(char const *s, char c)
 {
 	int	i;
 	int	len;
-	int	word;
+	int	sep;
 
-	word = 0;
+	sep = 0;
 	i = 0;
 	len = ft_strlen(s);
-	while (i < len)
+	while (*s && *s == c)
+		s++;
+	while (*s)
 	{
-		if (ft_strchr(&s[i], c) != 0)
-			word++;
-		i++;
+		if (*s == c)
+		{
+			sep++;
+			while (*s && *s == c)
+				s++;
+			if (!s)
+				return (sep);
+		}
+		else
+			s++;
 	}
-	return (word);
+	return (sep + 1);
 }
 
 char	*word_cpy(const char *str, int start, int end)
@@ -54,7 +63,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (countword(s, (int)c) + 1));
+	str = ft_calloc(countword(s, (int)c) + 1, sizeof(char *));
 	if (!str)
 		return (NULL);
 	i = -1;
@@ -70,6 +79,5 @@ char	**ft_split(char const *s, char c)
 			index = -1;
 		}
 	}
-	str[j] = 0;
 	return (str);
 }
