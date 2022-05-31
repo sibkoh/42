@@ -6,7 +6,7 @@
 /*   By: amunoz-d <amunoz-d@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 10:40:15 by amunoz-d          #+#    #+#             */
-/*   Updated: 2022/05/12 13:42:27 by amunoz-d         ###   ########.fr       */
+/*   Updated: 2022/05/30 12:25:49 by amunoz-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	countword(char const *s, char c)
 			sep++;
 			while (*s && *s == c)
 				s++;
-			if (!s)
+			if (!*s)
 				return (sep);
 		}
 		else
